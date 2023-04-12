@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class MiniMaxSum {
     // Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.

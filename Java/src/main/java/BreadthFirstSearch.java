@@ -1,8 +1,9 @@
 import java.util.*;
 
+/* Implementing breadth-first search on Graph */
 public class BreadthFirstSearch {
     public static Map<String, List<String>> graph = new HashMap<String, List<String>>();
-    static Queue<String> queue = new LinkedList<String>();
+    static Queue<String> queue = new ArrayDeque<>();
     static Map<String, Boolean> verifiedNames = new HashMap();
 
     public static void main(String[] args) {
@@ -31,7 +32,7 @@ public class BreadthFirstSearch {
     public static boolean findSeller() {
         int count = 0;
         while (!queue.isEmpty()) {
-            String name = queue.peek();
+            String name = queue.poll();
             queue.remove();
             if (!verifiedNames.getOrDefault(name, false)) {
                 if (name.endsWith("m")) { // true quando encontrou o destino
